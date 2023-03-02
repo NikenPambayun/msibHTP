@@ -1,0 +1,53 @@
+/* unversal css */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+.header{
+    background-color: darkkhaki;
+    padding: 20px;
+    text-align: center;
+}
+.topnav{
+    /* overflow untuk menghilangkan garis dibawah link */
+    overflow: hidden;
+    background-color: beige;
+
+}
+.topnav a{
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14pt;
+}
+.topnav a:hover{
+    background-color: darkkhaki;
+    color: white;
+}
+.kolom1{
+    float: left;
+    padding: 10px;
+    background-color: burlywood;
+}
+.kolom1.side{
+    width: 25%;
+}
+.kolom1.midle{
+    width: 50%;
+}
+.row::after{
+    content: "";
+    display: table;
+    clear: both; /* membersihkan float left sebelumnya*/
+}
+.footer{
+    background-color: darkkhaki;
+    padding: 10px;
+    text-align: center;
+}
