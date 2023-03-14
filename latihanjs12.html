@@ -1,0 +1,39 @@
+<script>
+    // array of object
+    // array did dalam array
+
+    let p1 = {nama : 'Niken', nilai : '80'};
+    let p2 = {nama : 'Dinda', nilai : '58'};
+    let p3 = {nama : 'Andi', nilai : '60'};
+    let p4 = {nama : 'Rani', nilai : '70'};
+    let p5 = {nama : 'Sofia', nilai : '50'};
+
+    let person = [p1, p2, p3, p4, p5];
+</script>
+<h3>
+    <table style="padding: 10; text-align: center; width: 100%;">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Nilai</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                var no = 1;
+                for (p of person) {
+                    let ket = (p.nilai >= 60)? "Lulus" : "Gagal";
+                    // $ digunakan untuk memanggil variabelnya
+                    document.write(`<tr bgcolor="">  
+                <td>${no++}</td>
+                <td>${p.nama}</td>
+                <td>${p.nilai}</td>
+                <td>${ket}</td>
+            </tr>`)
+                }
+            </script>
+        </tbody>
+    </table>
+</h3>
