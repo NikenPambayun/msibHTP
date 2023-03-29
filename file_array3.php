@@ -1,6 +1,6 @@
 <?php
 $m1 = ['NIM'=>'01111021', 'nama'=>'Andi', 'nilai'=>80];
-$m2 = ['NIM'=>'01111022', 'nama'=>'Rika', 'nilai'=>70];
+$m2 = ['NIM'=>'01111022', 'nama'=>'Rika', 'nilai'=>29];
 $m3 = ['NIM'=>'01111023', 'nama'=>'Sinta', 'nilai'=>50];
 $m4 = ['NIM'=>'01111024', 'nama'=>'Lala', 'nilai'=>40];
 $m5 = ['NIM'=>'01111025', 'nama'=>'Sandi', 'nilai'=>90];
@@ -24,7 +24,7 @@ $ar_judul = ['No', 'NIM', 'Nama', 'Nilai', 'Keterangan', 'Grade', ' Predikat'];
         <?php
         $no = 1;
         foreach ($mahasiswa as $mhs) {
-        $ket = ($mhs['nilai']>= 60 ? 'Lulus' : "Tidak Lulus");
+        $ket = ($mhs['nilai']>= 60) ? 'Lulus' : "Tidak Lulus";
         // grade
         if($mhs ['nilai']>= 80 && $mhs ['nilai']<= 100) $grade = 'A';
         else if($mhs ['nilai']>= 75 && $mhs ['nilai']< 80) $grade = 'B';
@@ -32,6 +32,27 @@ $ar_judul = ['No', 'NIM', 'Nama', 'Nilai', 'Keterangan', 'Grade', ' Predikat'];
         else if($mhs ['nilai']>= 30 && $mhs ['nilai']< 60) $grade = 'D';
         else if($mhs ['nilai']>= 0 && $mhs ['nilai']< 30) $grade = 'E';
         else $grade;
+
+        // predikat
+        switch ($grade) {
+            case "A":
+                $predikat = "Memuaskan";
+                break;
+            case "B":
+                $predikat = "Bagus";
+                break;
+            case "C":
+                $predikat = "Cukup";
+                break;
+            case "D":
+                $predikat = "Kurang";
+                break;
+            case "E":
+                $predikat = "Buruk";
+                break;
+            default:
+                $predikat = "";
+            }                
         ?>
         <tr>
             <td><?= $no ?></td>
@@ -40,6 +61,7 @@ $ar_judul = ['No', 'NIM', 'Nama', 'Nilai', 'Keterangan', 'Grade', ' Predikat'];
             <td><?= $mhs['nilai'] ?></td>
             <td><?= $ket ?></td>
             <td><?= $grade ?></td>
+            <td><?= $predikat ?></td>
         </tr>
         <?php $no++; } ?>
     </tbody>
